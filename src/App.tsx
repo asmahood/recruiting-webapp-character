@@ -18,6 +18,15 @@ function App() {
     Wisdom: 10
   });
 
+  const attributeModifers: Attributes = {
+    Charisma: calculateAttributeModifier(attributes.Charisma),
+    Constitution: calculateAttributeModifier(attributes.Constitution),
+    Dexterity: calculateAttributeModifier(attributes.Dexterity),
+    Intelligence: calculateAttributeModifier(attributes.Intelligence),
+    Strength: calculateAttributeModifier(attributes.Strength),
+    Wisdom: calculateAttributeModifier(attributes.Wisdom)
+  }
+
   const handleAttributeChange = (name: string, newValue: number) => {
     // Prevent an attribute's value from being negative
     if (newValue < 0) {
@@ -39,7 +48,7 @@ function App() {
         <h2>Attributes</h2>
         <section className="Attribute-list">
           {Object.entries(attributes).map(([name, value]) => (
-            <Attribute name={name} value={value} onChange={handleAttributeChange}/>
+            <Attribute name={name} value={value} modifier={attributeModifers[name]} onChange={handleAttributeChange}/>
           ))}
         </section>
         <h2>Classes</h2>
@@ -54,3 +63,8 @@ function App() {
 }
 
 export default App;
+
+function calculateAttributeModifier(value: number): number {
+  return Math.floor((value - 10) / 2);
+}
+
