@@ -21,7 +21,7 @@ export function ClassCard({
       <h3>{name}</h3>
       {expanded && (
         <section>
-          <p>Minimum Requirements</p>
+          <h5>Minimum Requirements</h5>
           {Object.entries(attributes).map(([name, value]) => (
             <p>
               {name}: {value}
