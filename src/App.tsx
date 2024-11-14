@@ -45,7 +45,7 @@ function App() {
         <h2>Classes</h2>
         <section className="Class-list">
           {Object.entries(CLASS_LIST).map(([name, classAttrs]) => (
-            <ClassCard name={name} meetsRequirements={meetsClassRequirements(attributes, classAttrs)} />
+            <ClassCard name={name} attributes={classAttrs} meetsRequirements={meetsClassRequirements(attributes, classAttrs)} />
           ))}
         </section>
       </section>

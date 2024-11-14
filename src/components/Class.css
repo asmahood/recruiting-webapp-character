@@ -6,6 +6,12 @@
   padding: 0 1rem;
 }
 
+.ClassCard:hover {
+  background-color: hsl(220, 11%, 26%);
+  cursor: pointer;
+}
+
 .ClassCard.valid {
   background-color: #3b573e;
 }
+
